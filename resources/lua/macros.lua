@@ -7,7 +7,7 @@ blight:add_alias("^/test$", function (matches)
 end)
 
 blight:add_alias("^/test (.*)$", function (matches)
-	local line = matches[2]:gsub("%s+", "")
+	local line = matches[2]:gsub("%s+", " ")
 	if line:len() > 0 then
 		blight:mud_output(line)
 	else
