@@ -100,7 +100,7 @@ impl CommandBuffer {
             self.completion_tree.insert(&command);
 
             if let Some(last_cmd) = self.history.iter().last() {
-                if &command != last_cmd {
+                if &command != last_cmd && command.len() > 1 {
                     self.history.push_back(command.clone());
                 }
             } else {
