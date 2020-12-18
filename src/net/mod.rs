@@ -1,5 +1,4 @@
 pub use self::{
-    check_version::check_latest_version,
     mud_connection::MudConnection,
     output_buffer::OutputBuffer,
     rw_stream::RwStream,
@@ -7,7 +6,6 @@ pub use self::{
     telnet::{TelnetHandler, TelnetMode},
 };
 
-mod check_version;
 mod mud_connection;
 mod output_buffer;
 mod rw_stream;

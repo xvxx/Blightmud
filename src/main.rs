@@ -29,7 +29,6 @@ use getopts::Options;
 use model::{
     Connection, Settings, CONFIRM_QUIT, LOGGING_ENABLED, MOUSE_ENABLED, SAVE_HISTORY, SETTINGS,
 };
-use net::check_latest_version;
 use tools::register_panic_hook;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
@@ -272,7 +271,6 @@ fn run(
             .send(Event::LoadScript(script.to_str().unwrap().to_string()))?;
     }
 
-    check_latest_version(session.main_writer.clone());
     if cfg!(not(debug_assertions)) {
         migrate_v2_settings_and_servers(session.main_writer.clone());
     }
